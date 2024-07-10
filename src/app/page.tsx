@@ -1,11 +1,11 @@
-import {Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome} from 'lucide-react'
+import {Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX} from 'lucide-react'
 export default function Home() {
   return (
     <div className="h-screen flex ">
 
       <aside id="menus" className="w-1/4 p-4 border-r border-gray-800 flex flex-col justify-between">
 
-  <nav className="space-y-4">
+  <nav className="space-y-4 pl-3">
     <a href="" className="flex py-2 "><Twitter /></a>
     <a href="" className="flex py-2 hover:bg-gray-700 transition duration-200 ease-in-out  rounded-full"><TtHome /><span className='ml-3'>Página inicial</span></a>
     <a href="" className="flex py-2 hover:bg-gray-700 transition duration-200 ease-in-out  rounded-full"><Search /><span className='ml-3'>Explorar</span></a>
@@ -38,6 +38,20 @@ export default function Home() {
 
 
       <aside className="w-1/4 p-4 border-l border-x-gray-800">
+      <div id="search" className="mb-4 relative">
+    <form className='flex items-center'>
+      <input type="text"
+      placeholder='Search on Twitter'
+      className='bg-gray-800 rounded-full text-white p-2 pl-10 w-full focus:outline-none focus:ring-2 focus:bg-gray-950 focus:ring-blue-800'
+      />
+      <button
+      className='absolute right-2 rounded-full transition duration-200 ease-in-out top-1/2 transform -translate-y-1/2 hover:bg-gray-700 p-2'
+      ><CircleX/></button>
+      <button id='SearchButton'
+      className='absolute left-2 pl-2 '><Search className='w-4'/></button>
+    </form>
+</div>
+
         <div>
           <h3>Assuntos do momento</h3>
           <a href="">Link</a>
