@@ -1,4 +1,5 @@
-import {Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX} from 'lucide-react'
+import {Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX, Ellipsis} from 'lucide-react'
+import { TrendingTopics } from './Components/TrendingTopics/TrendingTopics';
 export default function Home() {
   return (
     <div className="h-screen flex ">
@@ -52,12 +53,9 @@ export default function Home() {
     </form>
 </div>
 
-        <div>
-          <h3>Assuntos do momento</h3>
-          <a href="">Link</a>
-          <a href="">Link</a>
-          <a href="">Link</a>
-        </div>
+       <TrendingTopics/>
+
+
         <div>
           <h3>Quem seguir</h3>
           <a href="">Link</a>
