@@ -1,5 +1,6 @@
 import {Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX, Ellipsis} from 'lucide-react'
 import { TrendingTopics } from './Components/TrendingTopics/TrendingTopics';
+import { WhoToFollow } from './Components/WhoToFollow/WhoToFollow';
 export default function Home() {
   return (
     <div className="h-screen flex ">
@@ -38,30 +39,31 @@ export default function Home() {
 
 
 
-      <aside className="w-1/4 p-4 border-l border-x-gray-800">
-      <div id="search" className="mb-4 relative">
-    <form className='flex items-center'>
-      <input type="text"
-      placeholder='Search on Twitter'
-      className='bg-gray-800 rounded-full text-white p-2 pl-10 w-full focus:outline-none focus:ring-2 focus:bg-gray-950 focus:ring-blue-800'
-      />
-      <button
-      className='absolute right-2 rounded-full transition duration-200 ease-in-out top-1/2 transform -translate-y-1/2 hover:bg-gray-700 p-2'
-      ><CircleX/></button>
-      <button id='SearchButton'
-      className='absolute left-2 pl-2 '><Search className='w-4'/></button>
-    </form>
-</div>
+      <aside className="w-1/4 pl-4 pr-4 pb-4 border-l border-x-gray-800 overflow-y-scroll scrollbar-hide">
+      
+      <nav className="sticky top-0 w-full bg-black z-10 pt-4 pb-2">
+          <div id="search" className="mb-4">
+            <form className='flex items-center'>
+              <input type="text"
+                placeholder='Search on Twitter'
+                className='bg-gray-800 rounded-full text-white p-2 pl-10 w-full focus:outline-none focus:ring-2 focus:bg-gray-950 focus:ring-blue-800'
+              />
+              <button className='absolute right-2 rounded-full transition duration-200 ease-in-out top-1/2 transform -translate-y-1/2 hover:bg-gray-700 p-2 -mt-1'>
+                <CircleX />
+              </button>
+              <button id='SearchButton' className='absolute left-2 pl-2'>
+                <Search className='w-4' />
+              </button>
+            </form>
+          </div>
+        </nav>
 
        <TrendingTopics/>
-
-
-        <div>
-          <h3>Quem seguir</h3>
-          <a href="">Link</a>
-          <a href="">Link</a>
-          <a href="">Link</a>
-        </div>
+       
+       <WhoToFollow/>
+        
+        
+        
       </aside>
     </div>
   );

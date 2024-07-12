@@ -16,6 +16,8 @@ export function TrendingTopics() {
           <Topics category={"Tecnologia"} text={"Apple"} posts={"200,5 mil"}/>
 
           <Topics category={"Notícias"} text={"Covid-19"} posts={"1,5 mi"}/>
+
+          <Topics category="Política" text="Eleições" posts="1,5 mi" />
         </ul>
         <button className='flex text-blue-500 hover:bg-gray-900 w-full p-3 rounded-b-2xl '>Mostrar mais</button>  
         
