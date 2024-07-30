@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX, Ellipsis } from 'lucide-react';
 import { TrendingTopics } from './Components/TrendingTopics/TrendingTopics';
 import { WhoToFollow } from './Components/WhoToFollow/WhoToFollow';
+import { Post } from './Components/Post/Post';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('forYou');
@@ -58,11 +59,71 @@ export default function Home() {
           </button>
         </nav>
         
-        <div>
+        <div className='overflow-y-scroll scrollbar-hide'>
           {activeTab === 'forYou' && (
             <div>
               <p>Conteúdo Para Você</p>
-              {/* Adicione mais conteúdo aqui */}
+              {
+                <><><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                  name='Meu Nome'
+                  username='meuusuario'
+                  time='1h'
+                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                  verifier={true}
+                  comments={0}
+                  retweets={0}
+                  likes={0}
+                  views={0}
+                  saved={true}
+                  image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                    name='Meu Nome'
+                    username='meuusuario'
+                    time='1h'
+                    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                    verifier={true}
+                    comments={0}
+                    retweets={0}
+                    likes={0}
+                    views={0}
+                    saved={true}
+                    image='https://avatars.githubusercontent.com/u/77500452?v=4' /></><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                      name='Meu Nome'
+                      username='meuusuario'
+                      time='1h'
+                      content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                      verifier={true}
+                      comments={0}
+                      retweets={0}
+                      likes={0}
+                      views={0}
+                      saved={true}
+                      image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                        name='Meu Nome'
+                        username='meuusuario'
+                        time='1h'
+                        content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                        verifier={true}
+                        comments={0}
+                        retweets={0}
+                        likes={0}
+                        views={0}
+                        saved={true}
+                        image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                          name='Meu Nome'
+                          username='meuusuario'
+                          time='1h'
+                          content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                          verifier={true}
+                          comments={0}
+                          retweets={0}
+                          likes={0}
+                          views={0}
+                          saved={true}
+                          image='https://avatars.githubusercontent.com/u/77500452?v=4' /></>
+  
+
+                  
+              }
             </div>
           )}
           {activeTab === 'following' && (
