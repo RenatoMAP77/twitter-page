@@ -2,6 +2,7 @@ import { Ellipsis, Heart, MessageCircle, Repeat, Share , BadgeCheck, Bookmark, E
 
 
 interface PostProps {
+    idPost: number;
     avatar: string;
     name: string;
     verifier: boolean;
@@ -15,10 +16,14 @@ interface PostProps {
     views: number;
     saved: boolean;
 }
-export function Post({ avatar, name, verifier, username, time, content, image, comments, retweets, likes, views, saved }: PostProps) {
+export function Post({idPost ,avatar, name, verifier, username, time, content, image, comments, retweets, likes, views, saved }: PostProps) {
+
+  let idPostString = "post" + idPost || "post";
+  let HourFromNow = new Date().getHours() - parseInt(time.split(":")[0]);
+  let timeFromNow = HourFromNow > 0 ? HourFromNow + "h" : new Date().getMinutes() + "m";
 
     return (
-        <div id='post' className=' border-b border-gray-800 flex p-4'>
+        <div id= {idPostString} className=' border-b border-gray-800 flex p-4'>
            <a href="">
              <img src={avatar} alt="Avatar" className='w-12 h-12 rounded-full mr-4' />
             </a> 
@@ -28,7 +33,7 @@ export function Post({ avatar, name, verifier, username, time, content, image, c
                     <div className='flex items-center'>
                         <a href="" className='font-bold hover:underline'>{name}</a>
                         {verifier && <span className='text-blue-500 ml-1'> <BadgeCheck size={15} /></span>}
-                        <span className='text-gray-500 ml-1'> @{username} · {time}</span>
+                        <span className='text-gray-500 ml-1'> @{username} · {timeFromNow}</span>
                     </div>
                     <button className='rounded-full hover:bg-blue-800 p-2 '>
                      <Ellipsis className='w-5 h-5' />

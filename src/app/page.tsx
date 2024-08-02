@@ -4,16 +4,25 @@ import { Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, Ci
 import { TrendingTopics } from './Components/TrendingTopics/TrendingTopics';
 import { WhoToFollow } from './Components/WhoToFollow/WhoToFollow';
 import { Post } from './Components/Post/Post';
+import { PostData } from './Interface/PostData';
+import { UsePostData } from './Hooks/UsePost';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 export default function Home() {
+  
   const [activeTab, setActiveTab] = useState('forYou');
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
 
+  const {data} = UsePostData();
+  
+  
   return (
-    <div className="h-screen flex">
+    
+
+<div className="h-screen flex">
       <aside id="menus" className="w-1/4 p-4 border-r border-gray-800 flex flex-col justify-between">
         <nav className="space-y-4 pl-3">
           <a href="" className="flex py-2"><Twitter /></a>
@@ -64,7 +73,19 @@ export default function Home() {
             <div>
               <p>Conteúdo Para Você</p>
               {
+                
                 <><><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                name='Meu Nome'
+                username='meuusuario'
+                time='1h'
+                content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                verifier={true}
+                comments={0}
+                retweets={0}
+                likes={0}
+                views={0}
+                saved={true}
+                image='https://avatars.githubusercontent.com/u/77500452?v=4' idPost={1} /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
                   name='Meu Nome'
                   username='meuusuario'
                   time='1h'
@@ -75,51 +96,41 @@ export default function Home() {
                   likes={0}
                   views={0}
                   saved={true}
-                  image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
-                    name='Meu Nome'
-                    username='meuusuario'
-                    time='1h'
-                    content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                    verifier={true}
-                    comments={0}
-                    retweets={0}
-                    likes={0}
-                    views={0}
-                    saved={true}
-                    image='https://avatars.githubusercontent.com/u/77500452?v=4' /></><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
-                      name='Meu Nome'
-                      username='meuusuario'
-                      time='1h'
-                      content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                      verifier={true}
-                      comments={0}
-                      retweets={0}
-                      likes={0}
-                      views={0}
-                      saved={true}
-                      image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
-                        name='Meu Nome'
-                        username='meuusuario'
-                        time='1h'
-                        content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        verifier={true}
-                        comments={0}
-                        retweets={0}
-                        likes={0}
-                        views={0}
-                        saved={true}
-                        image='https://avatars.githubusercontent.com/u/77500452?v=4' /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
-                          name='Meu Nome'
-                          username='meuusuario'
-                          time='1h'
-                          content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                          verifier={true}
-                          comments={0}
-                          retweets={0}
-                          likes={0}
-                          views={0}
-                          saved={true}
-                          image='https://avatars.githubusercontent.com/u/77500452?v=4' /></>
+                  image='https://avatars.githubusercontent.com/u/77500452?v=4' idPost={2} /></><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                  name='Meu Nome'
+                  username='meuusuario'
+                  time='1h'
+                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                  verifier={true}
+                  comments={0}
+                  retweets={0}
+                  likes={0}
+                  views={0}
+                  saved={true}
+                  image='https://avatars.githubusercontent.com/u/77500452?v=4' idPost={3} /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                  name='Meu Nome'
+                  username='meuusuario'
+                  time='1h'
+                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                  verifier={true}
+                  comments={0}
+                  retweets={0}
+                  likes={0}
+                  views={0}
+                  saved={true}
+                  image='https://avatars.githubusercontent.com/u/77500452?v=4' idPost={4} /><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
+                  name='Meu Nome'
+                  username='meuusuario'
+                  time='1h'
+                  content='Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                  verifier={true}
+                  comments={0}
+                  retweets={0}
+                  likes={0}
+                  views={0}
+                  saved={true}
+                  image='https://avatars.githubusercontent.com/u/77500452?v=4' idPost={5} /></>
+                          
   
 
                   
@@ -129,7 +140,26 @@ export default function Home() {
           {activeTab === 'following' && (
             <div>
               <p>Conteúdo Seguindo</p>
-              {/* Adicione mais conteúdo aqui */}
+              {
+                // ? serve para se o data for nulo, ele não tentar acessar a propriedade map
+                data?.map((post) => (
+                  <Post
+                    idPost={post.id}
+                    avatar={post.avatar}
+                    name={post.name}
+                    verifier={post.verifier}
+                    username={post.username}
+                    time={post.time}
+                    content={post.content}
+                    image={post.image}
+                    comments={post.comments}
+                    retweets={post.retweets}
+                    likes={post.likes}
+                    views={post.views}
+                    saved={post.saved}
+                  />
+                ))
+              }
             </div>
           )}
         </div>
@@ -157,5 +187,8 @@ export default function Home() {
         <WhoToFollow />
       </aside>
     </div>
+    
+    
+    
   );
 }
