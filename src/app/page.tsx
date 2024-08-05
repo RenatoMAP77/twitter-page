@@ -48,7 +48,7 @@ export default function Home() {
         </footer>
       </aside>
 
-      <main className="w-1/2  ">
+      <main className="w-1/2 overflow-y-scroll scrollbar-hide ">
 
         <nav className="sticky top-0 bg-black  z-10 flex justify-around h-12 ">
           
@@ -68,7 +68,7 @@ export default function Home() {
           </button>
         </nav>
         
-        <div className='overflow-y-scroll scrollbar-hide'>
+        <div>
           {activeTab === 'forYou' && (
             <div>
               <p>Conteúdo Para Você</p>
