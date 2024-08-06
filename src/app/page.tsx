@@ -138,30 +138,35 @@ export default function Home() {
             </div>
           )}
           {activeTab === 'following' && (
-            <div>
-              <p>Conteúdo Seguindo</p>
-              {
-                // ? serve para se o data for nulo, ele não tentar acessar a propriedade map
-                data?.map((post) => (
-                  <Post
-                    idPost={post.id}
-                    avatar={post.avatar}
-                    name={post.name}
-                    verifier={post.verifier}
-                    username={post.username}
-                    time={post.time}
-                    content={post.content}
-                    image={post.image}
-                    comments={post.comments}
-                    retweets={post.retweets}
-                    likes={post.likes}
-                    views={post.views}
-                    saved={post.saved}
-                  />
-                ))
-              }
-            </div>
-          )}
+  <div>
+    <p>Conteúdo Seguindo</p>
+    {
+      data?.map((post) => {
+        const image = post.image ? post.image + '' : '';
+        return (
+          console.log(post.image),
+          <Post
+            idPost={post.id}
+            avatar={post.avatar}
+            name={post.name}
+            verifier={post.verifier}
+            username={post.username}
+            time={post.time}
+            content={post.content}
+            image={image}
+            comments={post.comments}
+            retweets={post.retweets}
+            likes={post.likes}
+            views={post.views}
+            saved={post.saved}
+            key={post.id}
+          />
+        );
+      })
+    }
+  </div>
+)}
+
         </div>
       </main>
 
