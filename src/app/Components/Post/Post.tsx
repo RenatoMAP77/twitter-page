@@ -21,6 +21,15 @@ export function Post({idPost ,avatar, name, verifier, username, time, content, i
   let idPostString = "post" + idPost || "post";
   let HourFromNow = new Date().getHours() - parseInt(time.split(":")[0]);
   let timeFromNow = HourFromNow > 0 ? HourFromNow + "h" : new Date().getMinutes() + "m";
+ let viewsString = views.toString();
+  if (views >1000000)
+  {
+    viewsString = (views/1000000).toFixed(1) + "M";
+  }
+  else if (views >1000)
+  {
+    viewsString = (views/1000).toFixed(1) + "K";
+  }
 
     return (
         <div id= {idPostString} className=' border-b border-gray-800 flex p-4'>
@@ -64,7 +73,7 @@ export function Post({idPost ,avatar, name, verifier, username, time, content, i
           
           <button className='flex items-center space-x-2 hover:text-blue-500'>
         <Eye className='rounded-full w-8 h-8 p-2 hover:bg-opacity-40 hover:bg-blue-600' />
-            <span>{views}</span>
+            <span>{viewsString}</span>
           </button>
 
           <button className={`flex items-center ${saved ? 'text-blue-500' : 'hover:text-blue-500'} -mr-16`}>

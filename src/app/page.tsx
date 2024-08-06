@@ -71,7 +71,7 @@ export default function Home() {
         <div>
           {activeTab === 'forYou' && (
             <div>
-              <p>Conteúdo Para Você</p>
+              <p>Dados estáticos</p>
               {
                 
                 <><><Post avatar='https://avatars.githubusercontent.com/u/77500452?v=4'
@@ -139,10 +139,11 @@ export default function Home() {
           )}
           {activeTab === 'following' && (
   <div>
-    <p>Conteúdo Seguindo</p>
+    <p>Dados provindos do banco de dados</p>
     {
       data?.map((post) => {
         const image = post.image ? post.image + '' : '';
+        console.log(post.image);
         return (
           console.log(post.image),
           <Post
