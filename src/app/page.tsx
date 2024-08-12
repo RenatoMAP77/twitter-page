@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX, Ellipsis } from 'lucide-react';
+import { Bookmark, Search, Twitter, Bell, Mail, Scroll, User, Home as TtHome, CircleX, Ellipsis, Image, AlignLeft, Smile, CalendarCheck2, MapPin } from 'lucide-react';
 import { TrendingTopics } from './Components/TrendingTopics/TrendingTopics';
 import { WhoToFollow } from './Components/WhoToFollow/WhoToFollow';
 import { Post } from './Components/Post/Post';
@@ -15,10 +15,11 @@ export default function Home() {
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
   };
-
+// get dos posts já feitos
   const {data} = UsePostData();
   
   
+
   return (
     
 
@@ -67,7 +68,50 @@ export default function Home() {
             Seguindo
           </button>
         </nav>
-        
+
+        <div id='post-Area' className='h-32 flex pl-4 pr-4 pt-2 pb-2'>
+          <div id='post-sideArea' className='w-1/12 bg-red-700 h-full'>
+          <img src='https://avatars.githubusercontent.com/u/77500452?v=4' alt="Minha foto de perfil" className='w-12 mt-2 rounded-full' />
+          </div>
+          <div id='post-midArea' className='w-11/12  h-full'>
+            <div id='text' className='border-b-2 border-gray-800'>
+             
+
+              <textarea
+                className='w-full h-20 bg-transparent p-2 rounded-lg focus:outline-none resize-none'
+                placeholder='O que está acontecendo?'
+                rows={3}
+              />
+            </div>
+            <div id='botoes' className='block text-blue-700'>
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <Image className='w-5 h-5' />
+            </button>
+
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <Image className='w-5 h-5' />
+            </button>
+
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <AlignLeft className='w-5 h-5' />
+            </button>
+
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <Smile className='w-5 h-5' />
+            </button>
+
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <CalendarCheck2 className='w-5 h-5' />
+            </button>
+
+            <button className='rounded-full hover:bg-blue-950 p-2 -mt-9'>
+                <MapPin className='w-5 h-5' />
+            </button>
+
+            </div>
+          </div>
+
+        </div>
         <div>
           {activeTab === 'forYou' && (
             <div>
